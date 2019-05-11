@@ -1,0 +1,13 @@
+rofi.combi-mode:	window,drun,ssh
+rofi.mode:		combi,run
+rofi.width:		50
+rofi.lines:		10
+rofi.columns:		2
+rofi.padding:		50
+rofi.eh:		1
+rofi.opacity:		85
+rofi.bw:		0
+rofi.separator-style:	dash
+rofi.color-enabled:	true
+rofi.color-normal: #2f343f, #f3f4f5, #2f343f, #2f343f, #9575cd
+rofi.color-window: #2f343f, #2f343f, #2f343f
