@@ -4,7 +4,7 @@
 for_window [class="^.*"] border pixel 2
 gaps inner 7
 gaps outer 7
-set $mod Mod4
+set $mod Mod1
 set $shutdown sudo -A poweroff
 set $reboot sudo -A reboot
 set $terminal --no-startup-id urxvt
@@ -148,5 +148,11 @@ exec --no-startup-id xrandr -s 1920x1080
 
 #set background
 exec --no-startup-id feh --bg-scale ~/walls/tree_silhouette_lonely_126139_1920x1080.jpg
+
+# Run polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Starts dunst for notifications:
+exec --no-startup-id dunst
 
 #exec_always dbus-launch compton -CG --config ~/.config/compton.conf &
