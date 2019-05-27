@@ -7,11 +7,11 @@ gaps outer 7
 set $mod Mod1
 set $shutdown sudo -A poweroff
 set $reboot sudo -A reboot
-set $terminal --no-startup-id urxvt
+set $terminal --no-startup-id st
 
 # font
-#font pango:monospace 10
-font pango:System San Francisco Display 13 
+font pango:monospace 10
+#font pango:System San Francisco Display 13 
 
 # thin borders
 hide_edge_borders both
@@ -103,6 +103,10 @@ bindsym $mod+l focus right
 	bindsym $mod+Shift+9 move container to workspace $ws9
 	bindsym $mod+Shift+0 move container to workspace $ws10
 
+# open applications on specific workspaces
+	assign [class="nnn"] $ws7
+	assign [class="Firefox"] $ws8
+
 # reload the configuration file
 	bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -143,16 +147,30 @@ bindsym $mod+l focus right
 #        status_command i3status
 #}
 
+# volume control
+	bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+	bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ umute
+	bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- umute
+
+# media player controls
+	bindsym XF86AudioPlay exec mpc toggle
+	bindsym XF86AudioPause exec mpc pause
+	bindsym XF86AudioNext exec mpc next
+	bindsym XF86AudioPrev exec mpc prev
+
+# screenshot
+	bindsym Print exec scrot $HOME/screenshots/$(date +'%Y%m%d-%H:%M:%S').png
+	bindsym Mod1+Print exec scrot -u $HOME/screenshots/$(date +'%Y%m%d-%H:%M:%S').png
+	bindsym Mod1+Shift+Print exec scrot -s $HOME/screenshots/$(date +'%Y%m%d-%H:%M:%S').png
+
 # set resolution
-exec --no-startup-id xrandr -s 1920x1080
+exec --no-startup-id xrandr -s 1366x768
 
-#set background
-exec --no-startup-id feh --bg-scale ~/walls/tree_silhouette_lonely_126139_1920x1080.jpg
-
-# Run polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Starts dunst for notifications:
+# autostarted apps
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id feh --bg-scale --no-xinerama ~/walls/tree_silhouette_lonely_126139_1366x768.jpg
+exec --no-startup-id compton -CG --config ~/.config/compton.conf -b
 exec --no-startup-id dunst
-
-#exec_always dbus-launch compton -CG --config ~/.config/compton.conf &
+exec --no-startup-id mpd
+exec --no-startup-id setxkbmap us
+exec --no-startup-id unclutter
