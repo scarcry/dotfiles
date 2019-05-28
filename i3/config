@@ -147,6 +147,10 @@ bindsym $mod+l focus right
 #        status_command i3status
 #}
 
+# brightness control
+	bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+	bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+
 # volume control
 	bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 	bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ umute
