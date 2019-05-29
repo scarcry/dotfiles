@@ -9,6 +9,8 @@ export SAVEHIST=$HISTSIZE
 export PATH=$PATH:$HOME/bin
 
 # nnn file browser
+export NNN_BMS='h:~;d:~/docs;D:~/Downloads;w:~/walls'
+export NNN_USE_EDITOR=1
 export NNN_TMPFILE="/tmp/nnn"
 
 n()
