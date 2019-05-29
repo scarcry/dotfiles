@@ -10,18 +10,25 @@ set $reboot sudo -A reboot
 set $terminal --no-startup-id st
 
 # font
-font pango:monospace 10
-#font pango:System San Francisco Display 13 
+#font pango:monospace 10
+font pango:System San Francisco Display 10
 
 # thin borders
 hide_edge_borders both
 
-# drag windows
+# drag floating windows
 floating_modifier $mod
 
 # key-bindings
 bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
+
+# start rofi (dmenu mode)
+bindsym $mod+z exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -columns 2 -opacity "85"'
+
+# start rofi (window mode)
+bindsym $mod+Tab exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85"
+
 bindsym $mod+d exec rofi -show run
 
 # change focus
@@ -29,10 +36,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# lock
-	bindsym $mod+Shift+x exec i3lock --color 475263
-	#bindsym $mod+Shift+x exec i3lock -i ~/walls/tree_silhouette_lonely_126139_1920x1080.jpg
 
 # move focused window
 	bindsym $mod+Shift+h move left
@@ -167,6 +170,12 @@ bindsym $mod+l focus right
 	bindsym Mod1+Print exec scrot -u $HOME/screenshots/$(date +'%Y%m%d-%H:%M:%S').png
 	bindsym Mod1+Shift+Print exec scrot -s $HOME/screenshots/$(date +'%Y%m%d-%H:%M:%S').png
 
+# shut down, restart and locking
+ 	bindsym $mod+Delete exec rofi-computer
+	bindsym $mod+Shift+x exec i3lock --color 475263
+	#bindsym $mod+Shift+x exec i3lock -i ~/walls/tree_silhouette_lonely_126139_1920x1080.jpg
+
+
 # set resolution
 exec --no-startup-id xrandr -s 1366x768
 
@@ -174,6 +183,7 @@ exec --no-startup-id xrandr -s 1366x768
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-scale --no-xinerama ~/walls/tree_silhouette_lonely_126139_1366x768.jpg
 exec --no-startup-id compton -CG --config ~/.config/compton.conf -b
+exec --no-startup-id xset dpms 500
 exec --no-startup-id dunst
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap us
