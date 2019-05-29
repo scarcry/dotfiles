@@ -4,5 +4,5 @@ export BROWSER="firefox"
 export READER="zathura"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-        pgrep i3 || startx
+        pgrep -x i3 || startx
 fi
