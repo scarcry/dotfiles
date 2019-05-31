@@ -181,7 +181,7 @@ exec --no-startup-id xrandr -s 1366x768
 
 # autostarted apps
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id feh --bg-scale --no-xinerama ~/walls/tree_silhouette_lonely_126139_1366x768.jpg
+exec --no-startup-id feh --bg-scale --no-xinerama /usr/share/backgrounds/archlinux/archlinux-underground.jpg
 exec --no-startup-id compton -CG --config ~/.config/compton.conf -b
 exec --no-startup-id xset dpms 500
 exec --no-startup-id dunst
