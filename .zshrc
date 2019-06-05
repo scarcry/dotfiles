@@ -23,6 +23,11 @@ n()
         fi
 }
 
+cast()
+{
+	mkchromecast -y $1 -n $2 --video --encoder-backend ffmpeg --resolution $3
+}
+
 # set prompt
 export PROMPT=' [%~] '
 
