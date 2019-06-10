@@ -101,4 +101,4 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands st
 powerline-daemon -q
 
 # set monitor
-#export MONITOR=LVDS-1
+export MONITOR=LVDS-1
