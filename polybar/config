@@ -52,8 +52,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-1 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=false;3
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=false;3
 
 modules-left = bspwm i3
 modules-center = mpd
@@ -103,7 +103,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted =  %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
