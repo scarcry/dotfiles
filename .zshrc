@@ -102,3 +102,8 @@ powerline-daemon -q
 
 # set monitor
 export MONITOR=LVDS-1
+
+# powerlevel9K config
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
