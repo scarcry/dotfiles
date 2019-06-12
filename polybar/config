@@ -49,13 +49,13 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 0
 
 font-0 = fixed:pixelsize=10;1
 font-1 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=false;3
 font-2 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=false;3
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = mpd
 modules-right = filesystem xbacklight xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -420,4 +420,3 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
