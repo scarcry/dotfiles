@@ -116,7 +116,7 @@ bindsym $mod+Ctrl+x scratchpad show
 	bindsym $mod+Shift+0 move container to workspace $ws10
 
 # open applications on specific workspaces
-	assign [class="Firefox"]  $ws8
+	assign [class="Firefox"] $ws8
 
 # reload the configuration file
 	bindsym $mod+Shift+c reload
@@ -184,7 +184,7 @@ bindsym $mod+Ctrl+x scratchpad show
 
 
 # set resolution
-exec --no-startup-id xrandr -s 1366x768
+exec --no-startup-id xrandr --output LVDS-1 --mode 1366x768
 
 # autostarted apps
 exec_always --no-startup-id ~/.config/polybar/launch.sh
