@@ -188,7 +188,7 @@ exec --no-startup-id xrandr --output LVDS-1 --mode 1366x768
 
 # autostarted apps
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id feh --bg-scale --no-xinerama /usr/share/backgrounds/archlinux/archlinux-berry.jpg
+exec --no-startup-id feh --bg-scale --no-xinerama /usr/share/backgrounds/archlinux/archlinux-poolclouds.jpg
 exec --no-startup-id compton -f -CG --config ~/.config/compton.conf -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
