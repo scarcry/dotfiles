@@ -192,7 +192,7 @@ exec --no-startup-id feh --bg-scale --no-xinerama /usr/share/backgrounds/archlin
 exec --no-startup-id compton -f -CG --config ~/.config/compton.conf -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
-exec --no-startup-id dunst
+exec_always --no-startup-id dunst
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap us
 exec --no-startup-id unclutter
