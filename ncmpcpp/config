@@ -1,0 +1,14 @@
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.ncmpcpp/lyrics
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/music
+mpd_crossfade_time = 1
+#
+##### music visualizer #####
+##
+## Note: In order to make music visualizer work you'll need to use mpd fifo
+## output, whose format parameter has to be set to 44100:16:1 for mono
+## visualization or 44100:16:2 for stereo visualization. Example configuration
+## (it has to be put into mpd.conf):
+##

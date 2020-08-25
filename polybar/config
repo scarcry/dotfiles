@@ -35,6 +35,7 @@ height = 27
 ;offset-y = 1%
 radius = 6.0
 fixed-center = false
+dpi = 220
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -56,8 +57,9 @@ font-1 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=false;3
 font-2 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=false;3
 
 modules-left = i3
-modules-center = mpd
-modules-right = filesystem xbacklight xkeyboard memory cpu wlan eth battery temperature date powermenu
+;modules-center = mpd
+;modules-right = filesystem xbacklight xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = xkeyboard battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -101,11 +103,11 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 
-mount-0 = /
+;mount-0 = /usr/home/marcovl
 
-label-mounted =  %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+;label-mounted =  %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+;label-unmounted = %mountpoint% not mounted
+;label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
@@ -220,12 +222,12 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -242,7 +244,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = em0
 interval = 3.0
 
 format-connected-underline = #55aa55

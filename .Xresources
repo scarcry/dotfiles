@@ -1,7 +1,15 @@
 URxvt.cursorBlink: true
 URxvt.cursorColor: cyan
-URxvt.foreground: white
-URxvt.background: black
+URxvt.foreground: black
+URxvt.background: white
 URxvt.scrollBar: false
 !URxvt.font: xft:System San Francisco Display:size=8:antialias=true
 !URxvt.font: xft:Inconsolata:size=8:antialias=true
+!
+Xft.dpi: 220
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault

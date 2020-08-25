@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Terminate any currently running instances
 killall -q polybar
@@ -6,17 +6,13 @@ killall -q polybar
 # Pause while killall completes
 while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
-if type "xrandr" > /dev/null; then
+# Launch bar(s)
+#polybar example -q &
+
+if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload top -c ~/.config/polybar/config &
+    MONITOR=$m polybar --reload example &
   done
 else
-  polybar --reload top -c ~/.config/polybar/config &
+  polybar --reload example &
 fi
-
-# Launch bar(s)
-polybar example -q &
-# polybar top -q &
-# polybar bottom -q  &
-
-echo "polybars launched..."

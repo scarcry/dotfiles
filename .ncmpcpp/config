@@ -1,3 +1,3 @@
 user_interface = alternative
 display_bitrate = yes
-execute_on_song_change = dunstify "Now Playing ♫" "$(mpc current)"
+execute_on_song_change = dunstify "♫ $(mpc --host=localhost current) ♫"

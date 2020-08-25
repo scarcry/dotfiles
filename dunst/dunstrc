@@ -4,7 +4,7 @@
     geometry = "350x5-20+600"
     indicate_hidden = yes
     shrink = no
-    separator_height = 0
+    separator_height = 2
     transparency = 40
     notification_height = 0
     padding = 32
@@ -13,26 +13,26 @@
     frame_color = "#282828"
     separator_color = frame
     sort = no
-    idle_threshold = 120
+    idle_threshold = 0
     font = fantasque-sans-mono 10
-    line_height = 0
+    line_height = 3
     markup = full
     format = "%s\n%b"
     alignment = left
-    show_age_threshold = 60
+    show_age_threshold = -1
     word_wrap = yes
     ignore_newline = no
     ellipsize = middle
-    stack_duplicates = false
-    hide_duplicate_count = true
+    stack_duplicates = yes
+    hide_duplicate_count = yes
     show_indicators = no
     icon_position = off
     max_icon_size = 32
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
     sticky_history = yes
     history_length = 15
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    dmenu = /usr/local/bin/dmenu -p dunst:
+    browser = /usr/local/bin/firefox -new-tab
     always_run_script = true
     title = Dunst
     class = Dunst
@@ -54,20 +54,20 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282828"
     foreground = "#928374"
-    timeout = 5
+    timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#458588"
     foreground = "#ebdbb2"
-    timeout = 5
+    timeout = 6
 
 [urgency_critical]
     background = "#cc2421"
     foreground = "#ebdbb2"
     frame_color = "#fabd2f"
-    timeout = 0
+    timeout = 8
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
