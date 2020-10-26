@@ -194,10 +194,13 @@ exec --no-startup-id xrandr --output DP-1 --primary --mode 3440x1440 --above  LV
 #exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/1280x800-By\ Fire.jpg
 #exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/uj5Khiy.jpg
 #exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/neongenesisevangelion-1587054185835-8690.jpg
-#exec --no-startup-id feh --bg-scale ~/pix/walls/games/Eve\ Online/vindi-1920x1080.png
-#exec --no-startup-id feh --bg-scale ~/pix/walls/beach-clouds-dawn-dusk-1154502.jpg
-#exec --no-startup-id feh --bg-scale ~/pix/walls/chicks/wallhaven-96dzld.jpg
-exec --no-startup-id feh --bg-fill ~/pix/walls/games/Eve\ Online/faction-battleship-vindicator-2.jpg
+#exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/games/Eve\ Online/vindi-1920x1080.png
+#exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/beach-clouds-dawn-dusk-1154502.jpg
+#exec --no-startup-id feh --bg-fill /home/marcovl/pix/walls/games/Eve\ Online/faction-battleship-vindicator-2.jpg
+#exec --no-startup-id feh --bg-scale /home/marcovl/pix/walls/chicks/wallhaven-96dzld.jpg
+#exec --no-startup-id feh --bg-fill /home/marcovl/pix/walls/chicks/wallhaven-zm7vzw.jpg
+#exec --no-startup-id feh --bg-fill /home/marcovl/pix/cars/BMW/M4.jpg
+exec --no-startup-id feh --bg-fill /home/marcovl/pix/walls/wp1817957-peacock-feathers-wallpapers.jpg
 exec --no-startup-id compton -fcCG --config ~/.config/compton.conf -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
