@@ -1,7 +1,10 @@
+" Settings{{{
 set nocompatible                  " Must come first because it changes other options.
 syntax enable                     " Turn on syntax highlighting.
+syntax on
 filetype plugin on                " Turn on file type detection.
 filetype indent plugin on         " Turn on file type detection.
+let mapleader = ","
 set number
 set relativenumber
 set expandtab                     " converts tab to spaces as whitespace
@@ -46,12 +49,14 @@ set statusline+=%y      "filetype
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-
+set statusline+=\ %P    "percent through file}}}}}}
 "
 " normal maps{{{
-nnoremap <space>r :set relativenumber!<cr>
-nnoremap <space>n :set number!<cr>
+
+" change pwd to directory of current file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <space>r :set relativenumber!<CR>
+nnoremap <space>n :set number!<CR>
 "
 " folding: met shift-tab in- en uitklappen
 nnoremap <silent> <s-tab> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
