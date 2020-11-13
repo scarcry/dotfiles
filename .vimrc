@@ -48,6 +48,11 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
+"
+" normal maps{{{
+nnoremap <space>r :set relativenumber!<cr>
+nnoremap <space>n :set number!<cr>
+"
 " folding: met shift-tab in- en uitklappen
 nnoremap <silent> <s-tab> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
 if has("folding") == 1
@@ -60,6 +65,7 @@ if has("folding") == 1
         let sh_fold_enabled = 1
 endif
 " =====================================
+"}}}
 
 " =====================================
 " DNS serial increment script, use '6 shift-g = u' key combo to raise serial
