@@ -1,13 +1,21 @@
 set nocompatible                  " Must come first because it changes other options.
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin on                " Turn on file type detection.
+filetype indent plugin on         " Turn on file type detection.
+set number
+set relativenumber
+set expandtab                     " converts tab to spaces as whitespace
+set path+=**                      " search directories upwards and downwards
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 set backspace=indent,eol,start    " Intuitive backspacing.
 set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
+"set wildmode=list:longest         " Complete files like a shell.
 set incsearch                     " Highlight matches as you type.
+set smartcase                     " automatically switch to case-sensitive when using uppercase
+set ignorecase
+set cursorline
 set hlsearch                      " Highlight matches.
 set wrap                          " Turn on line wrapping.
 set modeline                      " Allow per file config
@@ -41,7 +49,7 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
 " folding: met shift-tab in- en uitklappen
-noremap <silent> <s-tab> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
+nnoremap <silent> <s-tab> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
 if has("folding") == 1
         set foldmethod=marker
         let fortran_fold = 1
