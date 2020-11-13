@@ -72,6 +72,14 @@ endif
 " =====================================
 "}}}
 
+" Automatically save folds{{{
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END"}}}
+
+
 " =====================================
 " DNS serial increment script, use '6 shift-g = u' key combo to raise serial
 " quickly and safely
