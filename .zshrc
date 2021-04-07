@@ -13,10 +13,11 @@ export NNN_USE_EDITOR=1
 export NNN_TMPFILE=/tmp/nnn
 export NNN_FALLBACK_OPENER=xdg-open
 export NNN_COLORS='6237'
+export NNN_PLUG='v:imgview'
 
 n()
 {
-        nnn -e "$@"
+        nnn -de "$@"
 
         if [ -f $NNN_TMPFILE ]; then
                 . $NNN_TMPFILE
