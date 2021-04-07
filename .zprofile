@@ -1,7 +1,7 @@
 export TERMINAL="st"
-export BROWSER="chrome"
+export BROWSER="surf"
 export READER="zathura"
 
 if [[ "$(tty)" = "/dev/ttyv0" ]]; then
-        pgrep -x i3 || startx
+        pgrep -x dwm || startx
 fi
