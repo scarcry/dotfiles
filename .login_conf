@@ -1,11 +1,7 @@
-# $FreeBSD: head/share/skel/dot.login_conf 77995 2001-06-10 17:08:53Z ache $
+# $FreeBSD: stable/12/share/skel/dot.login_conf 77995 2001-06-10 17:08:53Z ache $
 #
 # see login.conf(5)
 #
-#me:\
-#	:charset=UTF-8:\
-#	:path=/usr/local/sbin /sbin /bin /usr/sbin /usr/bin /usr/local/bin ~/bin:\
-#	:lang=en_US.UTF-8:
 me:\
 	:charset=UTF-8:\
 	:path=/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin ~/bin:\
