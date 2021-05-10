@@ -148,6 +148,10 @@ alias mute-toggle='pactl set-sink-mute 0 toggle'
 
 alias clip='xsel -c'
 
+# power settings
+alias freq='sysctl dev.cpu.{{0..7}.cx_usage,0.freq}'
+alias temp='sysctl dev.{acpi_ibm.0.fan_speed,cpu.{0..7}.temperature} hw.acpi.thermal.tz0.temperature'
+
 # handy OpenSSL aliases
 alias crt_info='openssl x509 -text -in'
 alias crt_mod='openssl x509 -modulus -noout -in'
