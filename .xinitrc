@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# set PROPER locale(1) with LC_ALL variable
+export LC_ALL=en_US.UTF-8
+
+# enable tap-to-click on Touchpad (requires install of xf86-input-synaptics)
+synclient TapButton1=1
+
 userresources=$HOME/.Xresources
 userdefaults=$HOME/.Xdefaults
 export XCURSOR_PATH=""
@@ -19,30 +25,34 @@ if [ -f $userdefaults ]; then
 fi
 
 # start compton
-compton -fcCG --config ~/.config/compton.conf -b
+compton --config ~/.config/compton.conf -b
 
 #xrandr --dpi 220
-xrandr --output DP-1 --off
-xrandr --output LVDS-1 --primary --mode 1366x768
-#xrandr --output DP-1 --primary --mode 3440x1440 --above  LVDS-1
-
-# set background for dwm
-feh --bg-scale /home/marcovl/pix/walls/tree_silhouette_lonely_126139_3840x2160.jpg
+xrandr --output eDP-1 --primary --mode 2560x1440 --rate 60
 
 # include font awesome 5
 xset +fp /usr/local/share/fonts/font-awesome
 xset fp rehash
 
-#while xsetroot -name "`date +'%H:%M'`"
+#while xsetroot -name "$(date +'%H:%M:%S')"
 #    do
 #    	sleep 1
 #    done &
 
-# start dwm
+# disable screen blanking
+xset s off
+# disable audible bell
+xset b off
+# disable DPMS
 xset -dpms
-#xset s off
-setxkbmap us
+# improve up key auto delay (default 600 25)
+xset r rate 300 50
+# startup of favourite utils
 dunst &
 unclutter &
-slstatus &
-exec /usr/local/bin/dwm
+# set background for dwm
+feh --bg-fill /home/marcovl/pix/F1/AMR21/Screenshot_20211103-090829__01.jpg
+#feh --bg-max /home/marcovl/pix/walls/fantasy\ girls/wallhaven-4gp533.png
+
+# start dwm
+exec dwm
