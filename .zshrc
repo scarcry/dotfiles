@@ -34,6 +34,22 @@ cast()
 	mkchromecast -y $1 -n $2 --video --encoder-backend ffmpeg --control --hijack --resolution $3
 }
 
+# FreeBSD pkg(8) functions
+pkg-version()
+{
+        pkg version -l '<' | awk '{print $1}'
+}
+
+pkg-defunct()
+{
+        pkg version -vRL= | grep orphan
+}
+
+pkg-search()
+{
+        pkg search -o $1
+}
+
 # set prompt
 export PROMPT=' [%~] '
 
@@ -45,7 +61,7 @@ export LSCOLORS="GxDxFxdxCxegedadagExEx"
 
 # Display path in titlebar of terms.
 case "$TERM" in
-screen|(a|k|xterm*|rxvt*|st))
+screen|(a|k|xterm*|rxvt*|st*))
     precmd () {print -Pn "\e]0;%n@%m: %~\a"}
     ;;
 *)
@@ -145,6 +161,7 @@ alias ncm='ncmpcpp'
 alias v='vim'
 alias grep='grep --color'
 alias mute-toggle='pactl set-sink-mute 0 toggle'
+alias pstree='pstree -g 2'
 
 alias clip='xsel -c'
 
@@ -152,15 +169,29 @@ alias clip='xsel -c'
 alias freq='sysctl dev.cpu.{{0..7}.cx_usage,0.freq}'
 alias temp='sysctl dev.{acpi_ibm.0.fan_speed,cpu.{0..7}.temperature} hw.acpi.thermal.tz0.temperature'
 
+# FreeBSD ifconfig(8) CIDR notation
+export IFCONFIG_FORMAT=inet6:cidr,inet:cidr
+
 # handy OpenSSL aliases
-alias crt_info='openssl x509 -text -in'
-alias crt_mod='openssl x509 -modulus -noout -in'
 alias csr_info='openssl req -text -noout -in'
 alias csr_mod='openssl req -modulus -noout -in'
+alias crt_info='openssl x509 -text -in'
+alias crt_mod='openssl x509 -modulus -noout -in'
+alias key_info='openssl rsa -text -noout -in'
 alias key_mod='openssl rsa -modulus -noout -in'
 
+# enable zsh command line autosuggestions
+if [ -e /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
+then
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 # enable zsh command line syntax highlighting (http://github.com/zsh-users/zsh-syntax-highlighting)
+if [ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
+then
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
 
