@@ -91,6 +91,12 @@ bindkey '^r' history-incremental-search-backward
 #zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
+# try to make the Del key work in some programs using the st(1) terminal emulator
+function zle-line-init () { echoti smkx }
+function zle-line-finish () { echoti rmkx }
+zle -N zle-line-init
+zle -N zle-line-finish
+
 zstyle :compinstall filename '/home/marcovl/.zshrc'
 
 #local myhosts
