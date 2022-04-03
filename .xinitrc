@@ -24,9 +24,6 @@ if [ -f $userdefaults ]; then
 	xrdb -merge "$userdefaults"
 fi
 
-# start compton
-compton --config ~/.config/compton.conf -b
-
 #xrandr --dpi 220
 xrandr --output eDP-1 --primary --mode 2560x1440 --rate 60
 
@@ -48,11 +45,23 @@ xset -dpms
 # improve up key auto delay (default 600 25)
 xset r rate 300 50
 # startup of favourite utils
+
+# run sysutils/dunst
 dunst &
-unclutter &
-# set background for dwm
-feh --bg-fill /home/marcovl/pix/F1/AMR21/Screenshot_20211103-090829__01.jpg
+
+# run misc/unclutter
+# unclutter &
+
+# set background for dwm (requires graphics/feh)
+feh --bg-fill /home/marcovl/pix/games/Mass\ Effect/Rur3yy2-mass-effect-normandy-wallpaper.jpg
+#feh --bg-fill /home/marcovl/pix/F1/AMR21/Screenshot_20211103-090829__01.jpg
 #feh --bg-max /home/marcovl/pix/walls/fantasy\ girls/wallhaven-4gp533.png
 
-# start dwm
+# run x11-wm/picom
+picom --config ~/.config/picom.conf -b
+
+# run slstatus (http://tools.suckless.org/slstatus)
+slstatus &
+
+# run dwm (http://dwm.suckless.org)
 exec dwm
