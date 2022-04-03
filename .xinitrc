@@ -53,7 +53,7 @@ dunst &
 # unclutter &
 
 # set background for dwm (requires graphics/feh)
-feh --bg-fill /home/marcovl/pix/games/Mass\ Effect/Rur3yy2-mass-effect-normandy-wallpaper.jpg
+feh --bg-fill /home/marcovl/pix/walls/nenad-novakovic-L2QB-rG5NM0-unsplash.jpg
 #feh --bg-fill /home/marcovl/pix/F1/AMR21/Screenshot_20211103-090829__01.jpg
 #feh --bg-max /home/marcovl/pix/walls/fantasy\ girls/wallhaven-4gp533.png
 
