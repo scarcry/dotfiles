@@ -6,6 +6,10 @@ mpd_host = /usr/home/marcovl/.config/mpd/socket
 mpd_music_dir = ~/music
 mpd_crossfade_time = 1
 #
+# visibility
+#
+display_bitrate = yes
+#
 ##### music visualizer #####
 ##
 ## Note: In order to make music visualizer work you'll need to use mpd fifo
