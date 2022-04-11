@@ -46,6 +46,9 @@ xset -dpms
 xset r rate 300 50
 # startup of favourite utils
 
+# run audio/musicpd
+musicpd /home/marcovl/.config/mpd/mpd.conf
+
 # run sysutils/dunst
 dunst &
 
