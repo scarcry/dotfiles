@@ -186,13 +186,13 @@ alias crt_mod='openssl x509 -modulus -noout -in'
 alias key_info='openssl rsa -text -noout -in'
 alias key_mod='openssl rsa -modulus -noout -in'
 
-# enable zsh command line autosuggestions
+# enable shells/zsh-autosuggestions
 if [ -e /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
 then
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-# enable zsh command line syntax highlighting (http://github.com/zsh-users/zsh-syntax-highlighting)
+# enable shells/zsh-syntax-highlighting
 if [ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 then
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
