@@ -33,9 +33,9 @@ set bg=dark
 " autocmd Filetype yaml setlocal tabstop=2 ai colorcolumn=1,3,5,7,9,80
 
 " enable yaml syntax color
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim"}}}
 
-"statusline setup
+"statusline setup{{{
 set laststatus=2
 set statusline=%<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
 set statusline=%t       "tail of the filename
@@ -50,7 +50,7 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file}}}}}}
-"
+ 
 " normal maps{{{
 
 " change pwd to directory of current file
@@ -79,9 +79,7 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END"}}}
 
-
-" =====================================
-" DNS serial increment script, use '6 shift-g = u' key combo to raise serial
+" DNS serial increment script, use '6 shift-g = u' key combo to raise serial{{{
 " quickly and safely
 map =u :call SerialUp()<cr>
 function! SerialUp()
@@ -92,4 +90,4 @@ function! SerialUp()
                 let newserial = newserial + 1
         endwhile
         exe 's#[0-9]\{10\}#'.newserial."#"
-endfunction
+endfunction"}}}
