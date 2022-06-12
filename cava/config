@@ -1,0 +1,27 @@
+[general]
+
+mode = normal
+framerate = 60
+autosens = 1
+bars = 0
+bar_width = 1
+sleep_timer = 0
+
+[input]
+
+method = fifo
+source = /tmp/mpd.fifo
+sample_rate = 44100
+sample_bits = 16
+
+[output]
+method = ncurses
+channels = stereo
+
+[color]
+
+foreground = magenta
+
+[smoothing]
+
+integral = 77
