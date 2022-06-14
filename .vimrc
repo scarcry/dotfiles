@@ -91,3 +91,6 @@ function! SerialUp()
         endwhile
         exe 's#[0-9]\{10\}#'.newserial."#"
 endfunction"}}}
+
+" Fixes mouse issues in Alacritty Terminal{{{
+set ttymouse=sgr"}}}
