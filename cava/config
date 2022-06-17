@@ -20,7 +20,7 @@ channels = stereo
 
 [color]
 
-foreground = magenta
+foreground = default
 
 [smoothing]
 
