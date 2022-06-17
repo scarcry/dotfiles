@@ -4,7 +4,7 @@ mode = normal
 framerate = 60
 autosens = 1
 bars = 0
-bar_width = 1
+bar_width = 2
 sleep_timer = 0
 
 [input]
