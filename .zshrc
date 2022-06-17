@@ -61,7 +61,7 @@ export LSCOLORS="GxDxFxdxCxegedadagExEx"
 
 # Display path in titlebar of terms.
 case "$TERM" in
-screen|(a|k|xterm*|rxvt*|st*))
+screen|(a|k|xterm*|rxvt*|st*|alacritty*))
     precmd () {print -Pn "\e]0;%n@%m: %~\a"}
     ;;
 *)
