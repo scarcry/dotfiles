@@ -27,14 +27,9 @@ fi
 #xrandr --dpi 220
 xrandr --output eDP-1 --primary --mode 2560x1440 --rate 60
 
-# include font awesome 5
+# include font awesome 6
 xset +fp /usr/local/share/fonts/font-awesome
 xset fp rehash
-
-#while xsetroot -name "$(date +'%H:%M:%S')"
-#    do
-#    	sleep 1
-#    done &
 
 # disable screen blanking
 xset s off
