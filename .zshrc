@@ -174,7 +174,7 @@ alias clip='xsel -c'
 
 # power settings
 alias freq='sysctl dev.cpu.{{0..7}.cx_usage,0.freq}'
-alias temp='sysctl dev.{acpi_ibm.0.fan_speed,cpu.{0..7}.temperature} hw.acpi.thermal.tz0.temperature'
+alias temp='sysctl dev.{acpi_ibm.0.fan_speed,cpu.{0..7}.temperature} dev.acpi_ibm.0.fan_level hw.acpi.thermal.tz0.temperature'
 
 # FreeBSD ifconfig(8) CIDR notation
 export IFCONFIG_FORMAT=inet6:cidr,inet:cidr
