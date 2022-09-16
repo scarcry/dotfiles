@@ -37,8 +37,9 @@ xset s off
 xset b off
 # disable DPMS
 xset -dpms
-# improve up key auto delay (default 600 25)
+# improve up key auto delay (default 660 25)
 xset r rate 300 50
+
 # startup of favourite utils
 
 # run audio/musicpd
