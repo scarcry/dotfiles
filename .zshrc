@@ -29,6 +29,21 @@ export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
 
+# XDG environment variables
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# mpv
+# XDG_RUNTIME_DIR for mpv hardware acceleration
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+export XDG_RUNTIME_DIR=/tmp
+if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+mkdir "$XDG_RUNTIME_DIR"
+chmod 0700 "$XDG_RUNTIME_DIR"
+fi
+fi
+
 cast()
 {
 	mkchromecast -y $1 -n $2 --video --encoder-backend ffmpeg --control --hijack --resolution $3
