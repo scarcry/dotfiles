@@ -237,4 +237,4 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands st
 
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-neofetch --kitty ~/pix/Anime/Cyberpunk:\ Edgerunners/Lucy-smoke.jpg --cpu_temp C
+neofetch --kitty ~/pix/Anime/Cyberpunk:\ Edgerunners/Rebecca.jpg --size 10% --cpu_temp C
