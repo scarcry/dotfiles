@@ -52,7 +52,8 @@ dunst &
 # unclutter &
 
 # set background for dwm (requires graphics/feh)
-feh --bg-fill /home/marcovl/pix/walls/night_17-wallpaper-3440x1440.jpg
+feh --bg-scale ~/pix/walls/anime/cyberpunk_2077/1280307.png
+#feh --bg-fill /home/marcovl/pix/walls/night_17-wallpaper-3440x1440.jpg
 #feh --bg-fill /home/marcovl/pix/walls/palm_trees_tropical_island-wallpaper-3440x1440.jpg
 #feh --bg-fill /home/marcovl/pix/walls/1193309.png
 #feh --bg-fill /home/marcovl/pix/walls/macos/macOS\ Monterey\ light\ wallpaper.jpeg
