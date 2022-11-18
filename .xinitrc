@@ -62,7 +62,8 @@ feh --bg-scale ~/pix/walls/anime/cyberpunk_2077/1280307.png
 #feh --bg-max /home/marcovl/pix/walls/fantasy\ girls/wallhaven-4gp533.png
 
 # run x11-wm/picom
-picom --experimental-backends --config ~/.config/picom.conf -b
+# as of picom v10 --experimental-backends has become the default. these flags are no longer recognized so remove them
+picom --config ~/.config/picom.conf -b
 
 # run slstatus (http://tools.suckless.org/slstatus)
 slstatus &
