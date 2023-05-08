@@ -184,6 +184,7 @@ alias nv='nvim'
 alias grep='grep --color'
 alias mute-toggle='pactl set-sink-mute 0 toggle'
 alias pstree='pstree -g 2'
+alias z='zathura'
 
 alias clip='xsel -c'
 
