@@ -5,8 +5,6 @@ export HISTSIZE=50000
 export HISTFILE=$HOME/.history_zsh
 export SAVEHIST=$HISTSIZE
 
-# locale (LANG defined in ~/.login_conf)
-
 # nnn file browser
 export NNN_BMS='h:~;d:~/docs;D:~/downz;w:~/pix/walls'
 export NNN_USE_EDITOR=1
@@ -49,22 +47,6 @@ cast()
 	mkchromecast -y $1 -n $2 --video --encoder-backend ffmpeg --control --hijack --resolution $3
 }
 
-# FreeBSD pkg(8) functions
-pkg-version()
-{
-        pkg version -l '<' | awk '{print $1}'
-}
-
-pkg-defunct()
-{
-        pkg version -vRL= | grep orphan
-}
-
-pkg-search()
-{
-        pkg search -o $1
-}
-
 # set prompt
 export PROMPT=' [%~] '
 
@@ -96,14 +78,6 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-#function zle-line-init zle-keymap-select {
-#	    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-#	        RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-#		    zle reset-prompt
-#}
-#
-#zle -N zle-line-init
-#zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
 # try to make the Del key work in some programs using the st(1) terminal emulator
@@ -112,7 +86,7 @@ function zle-line-finish () { echoti rmkx }
 zle -N zle-line-init
 zle -N zle-line-finish
 
-zstyle :compinstall filename '/home/marcovl/.zshrc'
+zstyle :compinstall filename '/Users/marcovl/.zshrc'
 
 #local myhosts
 #myhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} )
@@ -174,26 +148,13 @@ alias ll='ls -lalhF'
 alias llr='ls -lahtrF'
 alias rrl='ls -lahRF'
 alias ls='ls --color'
-alias d='doas'
-alias db='doas bastille'
-alias dc='doas cat'
-alias dv='doas vim'
-alias ncm='ncmpcpp'
+alias s='sudo'
+alias sc='sudo cat'
+alias sv='sudo vim'
 alias v='vim'
 alias nv='nvim'
 alias grep='grep --color'
-alias mute-toggle='pactl set-sink-mute 0 toggle'
 alias pstree='pstree -g 2'
-alias z='zathura'
-
-alias clip='xsel -c'
-
-# power settings
-alias freq='sysctl dev.cpu.{{0..3}.cx_usage,0.freq}'
-alias temp='sysctl dev.{acpi_ibm.0.fan_speed,cpu.{0..3}.temperature} dev.acpi_ibm.0.fan_level hw.acpi.thermal.tz0.temperature'
-
-# FreeBSD ifconfig(8) CIDR notation
-export IFCONFIG_FORMAT=inet6:cidr,inet:cidr
 
 # handy OpenSSL aliases
 alias csr_info='openssl req -text -noout -in'
@@ -204,38 +165,18 @@ alias key_info='openssl rsa -text -noout -in'
 alias key_mod='openssl rsa -modulus -noout -in'
 
 # enable shells/zsh-autosuggestions
-if [ -e /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
+if [ -e /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]
 then
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # enable shells/zsh-syntax-highlighting
-if [ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
+if [ -e /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 then
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
-
-# start powerline daemon
-#powerline-daemon -q
-
-# set monitor
-#export MONITOR=LVDS-1
-
-# solarized zsh dircolors
-#source /usr/share/zsh/plugins/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
-
-# powerlevel9K config
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-#POWERLEVEL9K_COLOR_SCHEME='dark'
-#POWERLEVEL9K_CONTEXT_FOREGROUND='white'
-#POWERLEVEL9K_CONTEXT_BACKGROUND='light blue'
-#POWERLEVEL9K_DIR_FOREGROUND='white'
-#POWERLEVEL9K_DIR_BACKGROUND='038' # deepskyblue2
-
-#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 neofetch --kitty ~/pix/Anime/Cyberpunk:\ Edgerunners/Rebecca.jpg --size 10% --cpu_temp C
