@@ -1,7 +1,3 @@
-export TERMINAL="st"
-export BROWSER="surf"
-export READER="zathura"
+export TERMINAL="xterm-kitty"
 
-if [[ "$(tty)" = "/dev/ttyv0" ]]; then
-        pgrep -x dwm || startx
-fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
