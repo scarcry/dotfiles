@@ -1,5 +1,10 @@
 # Env. Vars
 
+# set PATH
+#export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS"
+export PATH=$PATH:$HOME/bin
+
 # History
 export HISTSIZE=50000
 export HISTFILE=$HOME/.history_zsh
@@ -180,3 +185,4 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
 
 neofetch --kitty ~/pix/Anime/Cyberpunk:\ Edgerunners/Rebecca.jpg --size 10% --cpu_temp C
+
