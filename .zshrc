@@ -2,7 +2,7 @@
 
 # set PATH
 #export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS"
+#export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS"
 export PATH=$PATH:$HOME/bin
 
 # History
@@ -159,6 +159,7 @@ alias sv='sudo vim'
 alias v='vim'
 alias nv='nvim'
 alias grep='grep --color'
+alias dig='dig -6'
 alias pstree='pstree -g 2'
 
 # handy OpenSSL aliases
